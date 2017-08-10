@@ -1,9 +1,9 @@
-#EverydayIDone
+# EverydayIDone
 
-##This Github is my working diary
+## This Github is my working diary
 
-###You can read it, and check my code
+### You can read it, and check my code
 
-####But I am just beginner, it is not always correct
-이거왜안됑?
-#dfdf
+#### But I am just beginner, it is not always correct
+
+# dfdfsh -
