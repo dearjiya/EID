@@ -10,9 +10,9 @@
 # dfdfsh -
 # but when i commit this, my process is run and something to write wash
 
-| YHJ | JHR |
-|-----|-----|
-|30   |30   |
-|HY   |HY   |
-|Busan|Masan|
+| YHJ | JHR | YHW |
+|-----|-----|-----|
+|30   |30   |24   |
+|HY   |HY   |SW   |
+|Busan|Masan|Busna|
 # Secret ~
