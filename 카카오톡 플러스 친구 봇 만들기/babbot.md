@@ -11,3 +11,11 @@
 - 플러스 친구 이름은 카톡에 대표 노출되고 1회 수정이 가능하므로 알아서 정하기
 
 ### API형
+~~~javascript
+var http = require('http');
+var server = http.createServer(function(req, res){
+  res.writeHead(200, {'Content-Type' : 'text/plain'});
+  res.end('Hello World');
+});
+server.listen(9000);
+~~~
