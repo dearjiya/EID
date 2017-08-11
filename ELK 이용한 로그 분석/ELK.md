@@ -37,4 +37,5 @@
 
    수정
 
-### 4. Logstash
+### 4. Logstash  
+    간단히 config 수정
