@@ -10,7 +10,14 @@
 - 하나의 관리자 아이디로 여러개의 플러스 친구 생성 가능
 - 플러스 친구 이름은 카톡에 대표 노출되고 1회 수정이 가능하므로 알아서 정하기
 
-### API형
+### 스마트 채팅
+- API형 선택
+- 서버URL에 API테스트를 통해 SUCCESS 되어야 앱을 등록할 수 있게 됨
+
+### 봇에 응답할 서버 구성하기
+> API테스트를 할 간단한 서버 구성
+
+#### NodeJS를 이용
 ~~~javascript
 var http = require('http');
 var server = http.createServer(function(req, res){
