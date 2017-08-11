@@ -20,9 +20,18 @@
 #### NodeJS를 이용
 ~~~javascript
 var http = require('http');
-var server = http.createServer(function(req, res){
-  res.writeHead(200, {'Content-Type' : 'text/plain'});
-  res.end('Hello World');
-});
-server.listen(9000);
+http.createServer(function(req, res) {
+  if(req.url.substring(1)=="keyboard"){
+    var resObj = {
+      "type": "text"
+    };
+    res.setHeader('content-Type':'application/json');
+    res.end(JSON.stringify(resObj));
+  } else {
+    res.setHeader('content-Type':'application/json');
+    res.end("");
+  })
+}).listen(8000);
 ~~~
+
+#### restAPI
