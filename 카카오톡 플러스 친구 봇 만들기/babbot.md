@@ -34,4 +34,27 @@ http.createServer(function(req, res) {
 }).listen(8000);
 ~~~
 
-#### restAPI
+#### wcf rest API
+- System.ServiceModel.AddressAccessDeniedException 예외 발생 > 관리자계정으로실행
+
+##### 1. WCF Service Contract 프로젝트 생성
+-  "C# 클래스 라이브러리" 타입으로 프로젝트 추가
+- 서버 메소드들의 Interface를 정의함
+
+###### Iservice.cs
+~~~ cs
+[ServiceContract]
+public Interface IService{
+  [OperationContract]
+  [WebInvoke(Method="GET",ResponseFormat = WebMessageFormat.Json)]
+  KeyboardRes keyboard();
+}
+[DataContract]
+public class KeyboardRes{
+  [DataMember]
+  public string type{ get;set;}
+}
+~~~
+
+2.
+#####
