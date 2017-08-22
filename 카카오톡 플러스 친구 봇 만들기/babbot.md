@@ -5,16 +5,16 @@
 플러스 친구를 통해 식단을 보내주는 봇을 만들어 보기로 했다.
 
 
-### 플러스 친구 가입
+## 플러스 친구 가입
 - https://center-pf.kakao.com  
 - 하나의 관리자 아이디로 여러개의 플러스 친구 생성 가능
 - 플러스 친구 이름은 카톡에 대표 노출되고 1회 수정이 가능하므로 알아서 정하기
 
-### 스마트 채팅
+## 스마트 채팅
 - API형 선택
 - 서버URL에 API테스트를 통해 SUCCESS 되어야 앱을 등록할 수 있게 됨
 
-### 봇에 응답할 서버 구성하기
+## 봇에 응답할 서버 구성하기
 > API테스트를 할 간단한 서버 구성
 
 #### NodeJS를 이용
@@ -34,7 +34,7 @@ http.createServer(function(req, res) {
 }).listen(8000);
 ~~~
 
-#### wcf rest API
+#### WCF Service를 이용
 - System.ServiceModel.AddressAccessDeniedException 예외 발생 > 관리자계정으로실행
 
 ##### 1. WCF Service Contract 프로젝트 생성
@@ -56,5 +56,5 @@ public class KeyboardRes{
 }
 ~~~
 
-2.
+##### 2.
 #####
