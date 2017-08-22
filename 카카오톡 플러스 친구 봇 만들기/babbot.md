@@ -1,8 +1,7 @@
 # 카카오톡 플러스 친구 봇 만들기
 
 > 플러스친구(구 옐로아이디) 기능을 사용해본 후 관심이 생겼다.
-회사 식당 메뉴를 늘 인프라에 접속해서 확인해야 한다는 불편함을 해소하기 위해  
-플러스 친구를 통해 식단을 보내주는 봇을 만들어 보기로 했다.
+회사 식당 메뉴를 늘 인프라에 접속해서 확인해야 한다는 불편함을 해소하기 위해 플러스 친구를 통해 식단을 보내주는 봇을 만들어 보기로 했다.
 
 
 ## 플러스 친구 가입
@@ -17,7 +16,7 @@
 ## 봇에 응답할 서버 구성하기
 > API테스트를 할 간단한 서버 구성
 
-#### NodeJS를 이용
+### NodeJS를 이용
 ~~~javascript
 var http = require('http');
 http.createServer(function(req, res) {
@@ -34,7 +33,7 @@ http.createServer(function(req, res) {
 }).listen(8000);
 ~~~
 
-#### WCF Service를 이용
+### WCF Service를 이용
 - System.ServiceModel.AddressAccessDeniedException 예외 발생 > 관리자계정으로실행
 
 ##### 1. WCF Service Contract 프로젝트 생성
@@ -56,5 +55,21 @@ public class KeyboardRes{
 }
 ~~~
 
-##### 2.
-#####
+##### 2. 콘솔서버어플리케이션용 WCF Service 생성
+- "C# 콘솔 어플리케이션" 타입으로 프로젝트 추가
+- Iservice에 정의된 메소드들을 구현
+
+###### Service.cs
+~~~ cs
+public class Service : IService{
+  public KeyboardRes keyboard(){
+    return _keyboard();
+  }
+
+  KeyboardRes _keyboard(){
+    KeyboardRes res = new KeyboardRes();
+    res.type = "text";
+    return res;
+  }
+}
+~~~
