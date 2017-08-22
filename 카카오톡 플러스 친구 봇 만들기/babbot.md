@@ -34,9 +34,11 @@ http.createServer(function(req, res) {
 ~~~
 
 ### WCF Service를 이용
-- System.ServiceModel.AddressAccessDeniedException 예외 발생 > 관리자계정으로실행
+- System.ServiceModel.AddressAccessDeniedException 예외 발생 > 관리자계정으로 실행
 
 ##### 1. WCF Service Contract 프로젝트 생성
+> 이하 ServiceInterface
+
 -  "C# 클래스 라이브러리" 타입으로 프로젝트 추가
 - 서버 메소드들의 Interface를 정의함
 
@@ -56,6 +58,8 @@ public class KeyboardRes{
 ~~~
 
 ##### 2. 콘솔서버어플리케이션용 WCF Service 생성
+> 이하 ConsoleServer
+
 - "C# 콘솔 어플리케이션" 타입으로 프로젝트 추가
 - Iservice에 정의된 메소드들을 구현
 
@@ -72,4 +76,55 @@ public class Service : IService{
     return res;
   }
 }
+~~~
+
+###### Program.cs
+~~~ cs
+class Program {
+  static void Main(string[] args){
+    WebServiceHost host = new WebServiceHost(typeof(Service), new Uri("http://localhost"));
+    host.AddServiceEndpoint(typeof(IService), new WebHttpBinding(),"");
+
+    try{
+      host.open();
+      Console.WriteLine("Hi! Press <ENTER> to terminate");
+      Console.ReadLine();
+      host.close();
+    }
+    catch(CommunicationException e){
+      Console.WriteLine("Excetpion: {0}", e.Message);
+      host.Abort();
+    }
+  }
+}
+~~~
+
+##### 3. IIS용 WCF Service 생성
+> 이하 IisServer
+
+###### Service.svc.cs
+- service.cs 와 동일하게 구현
+
+###### Web.Config
+~~~ Config
+<?xml version ="1.0"?>
+<configuration>
+  <system.serviceModel>
+    <services>
+      <service name="IisServer.Service">
+        <endpoint address="Http"
+                  binding="webHttpBinding"
+                  contract="ServiceInterface.IService"
+                  behaviorConfiguration="webHttp"/>
+      </service>
+    </services>
+    <behaviors>
+      <endpointBehaviors>
+        <behavior name="webHttp">
+          <webHttp/>
+        </behavior>
+      </endpointBehaviors>
+    </behaviors>
+  </system.serviceModel>
+</configuration>
 ~~~
