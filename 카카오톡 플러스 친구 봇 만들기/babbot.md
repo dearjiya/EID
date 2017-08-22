@@ -47,9 +47,10 @@ http.createServer(function(req, res) {
 [ServiceContract]
 public Interface IService{
   [OperationContract]
-  [WebInvoke(Method="GET",ResponseFormat = WebMessageFormat.Json)]
+  [WebInvoke(Method="GET", ResponseFormat = WebMessageFormat.Json)]
   KeyboardRes keyboard();
 }
+
 [DataContract]
 public class KeyboardRes{
   [DataMember]
