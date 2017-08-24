@@ -7,6 +7,9 @@
 - 설치과정
 >http://m.cafe.daum.net/ssaumjil/LnOm/1831840?svc=kakaotalkTab&bucket=toros_cafe_channel_alpha
 
+-
+> http://aidev.co.kr/chatbot/1229
+
 ### Apache 설치
 1. 다운로드
 https://www.apachelounge.com/download/
@@ -77,4 +80,15 @@ echo <<< EOD
 EOD;
  ?>
  ~~~
-d
+
+### php확장자 숨기기
+> httpd.conf 수정
+
+~~~ conf
+<Directory "[소스가 있는 폴더 경로]">
+  Options FollowSymLinks MultiViews
+  AllowOverride none
+  Order allow, deny
+  Allow from all
+</Directory>
+~~~
