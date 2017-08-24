@@ -57,7 +57,7 @@ AddHandler application/x-httpd-php .php
 ~~~
 
 4. 아파치 재시작 (httpd -k restart)
-5. 아파치 웹문서 저장공간a에 phpinfo.php 파일 저장
+5. 아파치 웹문서 저장공간에 phpinfo.php 파일 저장
 
 ~~~ php
 <?php
@@ -66,3 +66,15 @@ phpinfo();
 ~~~
 
 6. 웹브라우저에 http://localhost/phpinfo.php 입력해보기
+
+### keyboard API
+~~~ php
+<?php
+echo <<< EOD
+{
+	"type":"text"
+}
+EOD;
+ ?>
+ ~~~
+d
