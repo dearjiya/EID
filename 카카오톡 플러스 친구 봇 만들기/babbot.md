@@ -16,6 +16,7 @@
 ## 봇에 응답할 서버 구성하기
 > API테스트를 할 간단한 서버 구성
 
+
 ### NodeJS를 이용
 ~~~javascript
 var http = require('http');
@@ -50,7 +51,6 @@ public Interface IService{
   [WebInvoke(Method="GET", ResponseFormat = WebMessageFormat.Json)]
   KeyboardRes keyboard();
 }
-
 [DataContract]
 public class KeyboardRes{
   [DataMember]
