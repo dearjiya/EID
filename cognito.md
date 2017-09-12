@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> c62a59ce5b4d215785f550098475f8d72b9779f4
 $ apt-get install nodejs
 
 $ git clone https://github.com/aws/amazon-cognito-identity-js/
@@ -78,3 +81,11 @@ vi test.js
  33         cognitoUser = result.user;                                              
  34         console.log('user name is ' + cognitoUser.getUsername());               
  35     });                                                                         
+<<<<<<< HEAD
+=======
+
+
+$ npm install aws-sdk
+
+$ export 모른다 > npm install
+>>>>>>> c62a59ce5b4d215785f550098475f8d72b9779f4
