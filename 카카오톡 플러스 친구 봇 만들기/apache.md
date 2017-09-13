@@ -14,11 +14,9 @@
 1. 다운로드
 https://www.apachelounge.com/download/
 > 아파치는 C++ Redistributable Visual Studio 2015의 선행 설치를 요구한다.
-> 이게 없으면 중간에 VCRUNTIME140.dll 오류를 만날 수 있다.
+> 이게 없으면 중간에 VCRUNTIME140.dll 오를 만날 수 있다.
 
-- zip을 풀고 그 중에서 "Apache24"라는 폴더를 원하는 곳에 풀어준다. 그곳이 아파치가 설치되는 곳.
-
-3. 설정파일 수정(httpd.conf)
+2. 설정파일 수정(httpd.conf)
 > [설치경로]/conf/httpd.conf
 
 - ServerRoot 경로 변경 (\를 /로 변경해주기)
@@ -30,7 +28,7 @@ https://www.apachelounge.com/download/
 - ServerName 변경
 > ServerName www.example.com:80 찾아서 # 제거하고 ServerName localhost:80 (포트 변경되었다면 변경해줌)
 
-4. 아파치 서비스를 윈도우에 등록
+3. 아파치 서비스를 윈도우에 등록
 - path 등록
 (win+R > control > 시스템 > 고급시스템설정 > 고급 > 환경변수 > 시스템변수 > path >"D:\Apache24\bin" 추가)
 - 아파치 서비스 설치
@@ -40,7 +38,7 @@ https://www.apachelounge.com/download/
 1. 다운로드
 http://windows.php.net/download/
 >버전이 너무 많은데 which version do i choose를 확인해본다.
-IIS는 Non-Thread Safe(NTS), Apache는 Thread Safe(TS) / 32비트냐 64비트냐 는 아파치와 맞춰준다.
+IIS는 Non-Thread Safe(NTS), Apache는 Thread Safe(TS) / 32비트냐 64비트냐 는 아파치와 맞춰줌.
 
 - 역시나 원하는 곳에 풀어주기.
 
@@ -52,7 +50,7 @@ IIS는 Non-Thread Safe(NTS), Apache는 Thread Safe(TS) / 32비트냐 64비트냐
 3. 연동을 위해 apach 설정파일 수정(httpd.conf)
 - <IfModule dir_module> 을 찾아서 DirectoryIndex에 index.php를 index.html 앞에 추가한다.
 - 구문 추가
-~~~ ini-production
+~~~ ini
 PHPIniDir "[php.ini파일 경로]"
 LoadModule php7_module "[php설치경로]/php7apache2_4.dll"
 AddType application/x-httpd-php .html .php
