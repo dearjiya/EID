@@ -18,8 +18,6 @@
 > Running apt-get update... 메세지 ...약간 시간 걸림
 >  메세지 The repository is setup! You can now install packages. 가 보임
 
-- sudo apt-get install gitlab
-
 - $ sudo apt-get install gitlab-ce
 > 화면에 노란 별로 그린 마크와 빨간색으로 쓴 GitLab 글자 밑에
 > 메세지로 sudo gitlab-ctl reconfigure 를 실행하라고 알려줌
@@ -38,11 +36,21 @@ whoops, gitlab is taking too much time to respond
 
 ### 개발PC에서 설치
 > 패키지 다운받아서 직접 설치하기
+https://packages.gitlab.com/gitlab/gitlab-ce
 
 - sudo apt-get install libnss3-1d libxss1
 - apt-get install ruby //ruby1.9 버전 이상이 gitlab 요구사항
 - sudo dpkg -i 패키지.deb
 - sudo vi /etc/gitlab/gitlab.rb
+
+~~~config
+external_url 'http://123.456.789.0:1234'
+gitlab_ralis['time_zone']='Asia/Seoul'
+~~~
+
+- sudo gitlab-ctl reconfigure
+- sudo gitlab-ctl restart
+- sudo gitlab-ctl status
 
 ### 만난 오류들
 
